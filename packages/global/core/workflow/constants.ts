@@ -70,6 +70,7 @@ export enum NodeInputKeyEnum {
   anyInput = 'system_anyInput',
   textareaInput = 'system_textareaInput',
   addInputParam = 'system_addInputParam',
+  forbidStream = 'system_forbid_stream',
 
   // history
   historyMaxAmount = 'maxContext',
@@ -147,7 +148,10 @@ export enum NodeInputKeyEnum {
   // loop start
   loopStartInput = 'loopStartInput',
   // loop end
-  loopEndInput = 'loopEndInput'
+  loopEndInput = 'loopEndInput',
+
+  // form input
+  userInputForms = 'userInputForms'
 }
 
 export enum NodeOutputKeyEnum {
@@ -196,7 +200,10 @@ export enum NodeOutputKeyEnum {
   loopArray = 'loopArray',
 
   // loop start
-  loopStartInput = 'loopStartInput'
+  loopStartInput = 'loopStartInput',
+
+  // form input
+  formInputResult = 'formInputResult'
 }
 
 export enum VariableInputEnum {

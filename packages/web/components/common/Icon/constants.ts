@@ -40,6 +40,7 @@ export const iconPaths = {
   'common/language/en': () => import('./icons/common/language/en.svg'),
   'common/language/zh': () => import('./icons/common/language/zh.svg'),
   'common/leftArrowLight': () => import('./icons/common/leftArrowLight.svg'),
+  'common/line': () => import('./icons/common/line.svg'),
   'common/lineChange': () => import('./icons/common/lineChange.svg'),
   'common/linkBlue': () => import('./icons/common/linkBlue.svg'),
   'common/list': () => import('./icons/common/list.svg'),
@@ -129,6 +130,7 @@ export const iconPaths = {
   'core/chat/feedback/goodLight': () => import('./icons/core/chat/feedback/goodLight.svg'),
   'core/chat/fileSelect': () => import('./icons/core/chat/fileSelect.svg'),
   'core/chat/finishSpeak': () => import('./icons/core/chat/finishSpeak.svg'),
+  'core/chat/imgSelect': () => import('./icons/core/chat/imgSelect.svg'),
   'core/chat/quoteFill': () => import('./icons/core/chat/quoteFill.svg'),
   'core/chat/quoteSign': () => import('./icons/core/chat/quoteSign.svg'),
   'core/chat/recordFill': () => import('./icons/core/chat/recordFill.svg'),
@@ -221,6 +223,7 @@ export const iconPaths = {
   'core/workflow/template/extractJson': () =>
     import('./icons/core/workflow/template/extractJson.svg'),
   'core/workflow/template/fetchUrl': () => import('./icons/core/workflow/template/fetchUrl.svg'),
+  'core/workflow/template/formInput': () => import('./icons/core/workflow/template/formInput.svg'),
   'core/workflow/template/getTime': () => import('./icons/core/workflow/template/getTime.svg'),
   'core/workflow/template/httpRequest': () =>
     import('./icons/core/workflow/template/httpRequest.svg'),

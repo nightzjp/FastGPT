@@ -23,6 +23,7 @@ export const Input_Template_UserChatInput: FlowNodeInputItemType = {
   renderTypeList: [FlowNodeInputTypeEnum.reference, FlowNodeInputTypeEnum.textarea],
   valueType: WorkflowIOValueTypeEnum.string,
   label: i18nT('workflow:user_question'),
+  toolDescription: i18nT('workflow:user_question_tool_desc'),
   required: true
 };
 
@@ -104,4 +105,13 @@ export const Input_Template_Node_Height: FlowNodeInputItemType = {
   valueType: WorkflowIOValueTypeEnum.number,
   label: '',
   value: 900
+};
+
+export const Input_Template_Stream_MODE: FlowNodeInputItemType = {
+  key: NodeInputKeyEnum.forbidStream,
+  renderTypeList: [FlowNodeInputTypeEnum.switch],
+  valueType: WorkflowIOValueTypeEnum.boolean,
+  label: i18nT('workflow:template.forbid_stream'),
+  description: i18nT('workflow:template.forbid_stream_desc'),
+  value: false
 };
