@@ -215,9 +215,9 @@ const RenderUserFormInteractive = React.memo(function RenderFormInput({
     <Flex flexDirection={'column'} gap={2} w={'250px'}>
       {interactive.params.inputForm?.map((input) => (
         <Box key={input.label}>
-          <Flex mb={1}>
+          <Flex mb={1} alignItems={'center'}>
             <FormLabel required={input.required}>{input.label}</FormLabel>
-            <QuestionTip ml={1} label={input.description} />
+            {input.description && <QuestionTip ml={1} label={input.description} />}
           </Flex>
           {input.type === FlowNodeInputTypeEnum.input && (
             <Input
@@ -247,6 +247,7 @@ const RenderUserFormInteractive = React.memo(function RenderFormInput({
               max={input.max}
               isDisabled={interactive.params.submitted}
               bg={'white'}
+              rounded={'md'}
             >
               <NumberInputField
                 bg={'white'}
@@ -299,18 +300,12 @@ const AIResponseBox = ({ value, isLastResponseValue, isChatting }: props) => {
     );
   if (value.type === ChatItemValueTypeEnum.tool && value.tools)
     return <RenderTool showAnimation={isChatting} tools={value.tools} />;
-  if (
-    value.type === ChatItemValueTypeEnum.interactive &&
-    value.interactive &&
-    value.interactive.type === 'userSelect'
-  )
-    return <RenderUserSelectInteractive interactive={value.interactive} />;
-  if (
-    value.type === ChatItemValueTypeEnum.interactive &&
-    value.interactive &&
-    value.interactive?.type === 'userInput'
-  )
-    return <RenderUserFormInteractive interactive={value.interactive} />;
+  if (value.type === ChatItemValueTypeEnum.interactive && value.interactive) {
+    if (value.interactive.type === 'userSelect')
+      return <RenderUserSelectInteractive interactive={value.interactive} />;
+    if (value.interactive?.type === 'userInput')
+      return <RenderUserFormInteractive interactive={value.interactive} />;
+  }
 };
 
 export default React.memo(AIResponseBox);

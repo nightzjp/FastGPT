@@ -123,6 +123,7 @@ export const iconPaths = {
   'core/chat/chatLight': () => import('./icons/core/chat/chatLight.svg'),
   'core/chat/chatModelTag': () => import('./icons/core/chat/chatModelTag.svg'),
   'core/chat/chevronDown': () => import('./icons/core/chat/chevronDown.svg'),
+  'core/chat/chevronRight': () => import('./icons/core/chat/chevronRight.svg'),
   'core/chat/chevronSelector': () => import('./icons/core/chat/chevronSelector.svg'),
   'core/chat/chevronUp': () => import('./icons/core/chat/chevronUp.svg'),
   'core/chat/export/pdf': () => import('./icons/core/chat/export/pdf.svg'),
@@ -244,6 +245,10 @@ export const iconPaths = {
   'core/workflow/template/reply': () => import('./icons/core/workflow/template/reply.svg'),
   'core/workflow/template/runApp': () => import('./icons/core/workflow/template/runApp.svg'),
   'core/workflow/template/stopTool': () => import('./icons/core/workflow/template/stopTool.svg'),
+  'core/workflow/template/toolkitActive': () =>
+    import('./icons/core/workflow/template/toolkitActive.svg'),
+  'core/workflow/template/toolkitInactive': () =>
+    import('./icons/core/workflow/template/toolkitInactive.svg'),
   'core/workflow/template/systemConfig': () =>
     import('./icons/core/workflow/template/systemConfig.svg'),
   'core/workflow/template/textConcat': () =>

@@ -9,6 +9,7 @@ import {
   UserInputFormItemType,
   UserInputInteractive
 } from '@fastgpt/global/core/workflow/template/system/interactive/type';
+import { addLog } from '../../../../common/system/log';
 
 type Props = ModuleDispatchProps<{
   [NodeInputKeyEnum.description]: string;
@@ -19,6 +20,9 @@ type FormInputResponse = DispatchNodeResultType<{
   [NodeOutputKeyEnum.formInputResult]?: Record<string, any>;
 }>;
 
+/* 
+  用户输入都内容，将会以 JSON 字符串格式进入工作流，可以从 query 的 text 中获取。
+*/
 export const dispatchFormInput = async (props: Props): Promise<FormInputResponse> => {
   const {
     histories,
@@ -48,7 +52,8 @@ export const dispatchFormInput = async (props: Props): Promise<FormInputResponse
     try {
       return JSON.parse(text);
     } catch (error) {
-      return text;
+      addLog.warn('formInput error', { error });
+      return {};
     }
   })();
 

@@ -120,7 +120,7 @@ const NodeFormInput = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
         return (
           <Box>
             <HStack className="nodrag" cursor={'default'} mb={3}>
-              <FormLabel>{t('common:core.module.input_form')}</FormLabel>
+              <FormLabel>{t('workflow:user_form_input_config')}</FormLabel>
               <Box flex={'1 0 0'} />
               <Button
                 variant={'ghost'}
@@ -145,14 +145,14 @@ const NodeFormInput = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
               )}
             </HStack>
 
-            <TableContainer>
+            <TableContainer borderWidth={'1px'} borderRadius={'md'} borderBottom="none">
               <Table bg={'white'}>
                 <Thead>
                   <Tr>
                     <Th borderBottomLeftRadius={'none !important'}>
-                      {t('common:core.module.input_name')}
+                      {t('workflow:user_form_input_name')}
                     </Th>
-                    <Th>{t('common:core.module.input_description')}</Th>
+                    <Th>{t('workflow:user_form_input_description')}</Th>
                     <Th>{t('common:common.Require Input')}</Th>
                     <Th borderBottomRightRadius={'none !important'}>{t('user:operations')}</Th>
                   </Tr>
@@ -187,7 +187,6 @@ const NodeFormInput = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
                             w={'16px'}
                             color={'myGray.600'}
                             cursor={'pointer'}
-                            ml={2}
                             _hover={{ color: 'red.500' }}
                             onClick={() => {
                               onDelete(item.key);
@@ -204,7 +203,7 @@ const NodeFormInput = ({ data, selected }: NodeProps<FlowNodeItemType>) => {
         );
       }
     }),
-    [nodeId, editField, t, setEditField, onChangeNode]
+    [t, editField, onChangeNode, nodeId, outputs]
   );
 
   return (
